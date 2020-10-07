@@ -23,7 +23,7 @@ ipwpoint <- function(
 			if (!is.null(tempcall$trunc)) {if(tempcall$trunc < 0 | tempcall$trunc > 0.5) stop("Invalid truncation percentage specified (0-0.5)")}
 		#make new dataframe for newly computed variables, to prevent variable name conflicts
 			tempdat <- data.frame(
-				exposure = data[,as.character(tempcall$exposure)]
+				exposure = data[,as.character(tempcall$exposure), drop = TRUE]
 			)
 		#weights binomial
 			if (tempcall$family == "binomial") {
